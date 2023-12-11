@@ -4,6 +4,11 @@ input, select{
     border-width: 1px;
     border-radius: 2px;
     height: 25px;
+
+}
+
+select{
+    outline: none;
 }
 
 .chkPrioridade{

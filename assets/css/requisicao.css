@@ -14,7 +14,9 @@
     flex-direction: column;
     font-size: 20px;    
     align-items: center;   
-    justify-content: center;  
+    justify-content: center; 
+    background-color: black; 
+  
 
 }
 .header{
@@ -25,7 +27,7 @@
     align-items: center;
     padding-left: 1vw;
     padding-right: 1vw;
-  
+    
 }
 .header span{
     color: #ffffff;
@@ -40,6 +42,8 @@
     border-radius: 20px;
     border-style: solid;
     flex-wrap: wrap;
+    background: white;
+    
   
 }
 .camposPrincipais{
