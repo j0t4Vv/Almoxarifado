@@ -60,3 +60,24 @@ const produtos=[
         "EstoqueMinimo": 8
     }
 ]
+
+const departamentos=[
+    {
+        "idDep": 10,
+        "Descricao": "Sec. Educacao",
+        "Responsavel": "Jose",
+        "Cargo": "Administrador"
+    },
+    {
+        "idDep": 30,
+        "Descricao": "Sec. Trabalho",
+        "Responsavel": "Luiz",
+        "Cargo": "Gestor"
+    },
+    {
+        "idDep": 40,
+        "Descricao": "NAT",
+        "Responsavel": "Maria",
+        "Cargo": "Gerente"
+    }
+]
