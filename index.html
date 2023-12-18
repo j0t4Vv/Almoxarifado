@@ -11,10 +11,10 @@
     <div class="menu"></div>
 
     <div class="main">
-        <div class="header">
-            <span>Novo Pedido de Requisição</span>
-        </div>
         <div class="conteudo">
+            <div class="header">
+                <span>Novo Pedido de Requisição</span>
+            </div>
             <div class="dadosPrincipais">
                 <div class="titulo">
                     <span>Dados Principais | Requisição Nº </span>
@@ -111,14 +111,15 @@
                                 <span>Quantidade</span>
                                 <input type="text" id="Estoque" data-obrigatorio="true">
                             </div>
-
+                            
                             <div class="grupoTotal">
                                 <span>Total</span>
-                                <input type="text" id="total">
+                                <input type="text" id="total" data-obrigatorio="true">
                             </div>
                         
                         
-                            <div class="grupoStatusEstoque"> 
+                            <div class="grupoStatusEstoque" id="status">
+                                
                                 <div>
                                     <img src="/assets/img/verde.svg" alt="">
                                 </div>                           

@@ -182,14 +182,20 @@ ITENS
     
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* body{
     width: 100vw;
 } */
+
+body{
+    font-size: 16px;
+}
+
 .main{
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-size: 20px;    
@@ -198,13 +204,14 @@ ITENS
 
 }
 .header{
-    width: 50vw;
+    width: 90%;
     height: 5vh;
     background-color: #15C7FF;   
     display: flex;
     align-items: center;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    align-items: center;
+    padding: 0 1vw;
+   
   
 }
 .header span{
@@ -212,16 +219,28 @@ ITENS
 }
 .conteudo{
     /* background-color: yellow; */
-    padding-top: 3vh;
-    width: 50vw;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    margin-top: 20px;
+    width: 90%;
+    max-width: 800px;
+    padding: 20px;
     border-color:  #CDCDCD;;
     border-radius: 20px;
     border-style: solid;
     flex-wrap: wrap;
   
 }
+
+@media screen and (max-width: 768px) {
+    .header {
+        width: 100%;
+    }
+
+    .conteudo {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
 .camposPrincipais{
     width: 100%;
     display: flex;
@@ -404,3 +423,4 @@ ITENS
     width: 70px;
     border-radius: 5px;
 }
+

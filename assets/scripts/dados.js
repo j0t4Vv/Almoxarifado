@@ -31,6 +31,11 @@ const motivos=[
         "idMotivo": 3,
         "Descrição": "Quebra de Máquina",
         "idCategoria": 2
+    },
+    {
+        "idMotivo": 2,
+        "Descrição": "Financeiro",
+        "idCategoria": 3
     }
 ]
 
