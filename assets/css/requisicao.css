@@ -19,9 +19,11 @@ body {
 }
 
 .header {
-    width: 90%;
+    width: 100%;
     height: 5vh;
-    background-color: #15C7FF;   
+    margin-bottom: 10px;
+    /* background-color: #15C7FF;    */
+    background-color: steelblue;
     display: flex;
     align-items: center;
     align-items: center;
@@ -34,12 +36,12 @@ body {
 }
 
 .conteudo {
-    /* background-color: yellow; */
+    background-color: rgb(141, 141, 141);
     margin-top: 20px;
-    width: 90%;
-    max-width: 800px;
+    height: auto;
+    width: 800px;
     padding: 20px;
-    border-color: #CDCDCD;;
+    border-color: #4f4f4f;;
     border-radius: 20px;
     border-style: solid;
     flex-wrap: wrap;
@@ -60,21 +62,23 @@ body {
 .camposPrincipais {
     width: 100%;
     display: flex;
+    align-items: start;
+    justify-content: space-around;
     flex-direction: column;
     margin-bottom: 3vh;
     flex-wrap: wrap;
 }
 
 .linhasCampos {
+    width: 100%;
     display: flex;    
     flex-direction: row;
     margin-top: 1vh;
-    justify-content: start;
-    align-items: start;
     flex-wrap: wrap;    
 }
 
 .grupoInput {
+    padding-right: 130px;
     display: flex;
     flex-direction: column;
     padding-left: 5px;
@@ -97,7 +101,7 @@ body {
     padding-top: 3px;
     padding-left: 1px;
     padding-right: 5px;
-    border-color: #CDCDCD;
+    border-color: steelblue;
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;
@@ -148,7 +152,7 @@ body {
 .camposItens {
     display: flex;
     flex-direction: column;
-    border-color: #CDCDCD;
+    border-color: steelblue;
     border-style: solid;
     border-width: 1px;
     border-radius: 5px;    
@@ -210,7 +214,7 @@ body {
 
 .grupoStatusEstoque img {
     display: flex;
-    width: 30px;
+    max-width: 30px;
 }
 
 .grupoBtnInserirItens {
@@ -220,13 +224,13 @@ body {
     margin-left: 5px;
 }
 
-.linhaTotal {
+/* .linhaTotal {
     margin-top: 10px;
     margin-bottom: 20px;
     display: flex;
     justify-content: end;
     align-items: center;
-}
+} */
 
 .linhaTotal span {
     font-size: 18px;
@@ -245,26 +249,35 @@ body {
     border: 1px solid #CDCDCD;
     border-collapse: collapse;
     width: 100%;
+    max-width: 800px;
     margin-bottom: 10px;
-    font-size: 16px;
+    font-size: 12px;
     font-weight:unset;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     table-layout: fixed;
 }
 
 .tabelaItens td {
-    background-color:#15C7FF; 
+    background-color:steelblue; 
     border: 1px solid #CDCDCD;
     border-collapse: collapse; 
     color: white; 
-   
+    flex-wrap: wrap;
     text-align: left;
     padding-left: 10px;
 }
 
 .tabelaItens tr, .tabelaItens td {
-    border: 1px solid #CDCDCD;
+    border: 1px solid #4f4f4f;
     border-collapse: collapse;
-    padding-left: 10px;
+    
+}
+
+#tabelaItens{
+    width: 100%;
+    max-width: 1000px;
 }
 
 #btnRemover {

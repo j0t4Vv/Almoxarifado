@@ -43,32 +43,32 @@ const produtos=[
     {
         "idProduto": 1,
         "Descricao": "Monitor",
-        "Estoque": 10,
-        "EstoqueMinimo": 10,
+        "Estoque": 30,
+        "EstoqueMinimo": 15,
         "Unidade": "Un",
         "Preco": 560.00
     },
     {
         "idProduto": 2,
         "Descricao": "Gabinete",
-        "Estoque": 20,
-        "EstoqueMinimo": 10,
+        "Estoque": 60,
+        "EstoqueMinimo": 15,
         "Unidade": "Un",
         "Preco": 199.00
     },
     {
         "idProduto": 3,
         "Descricao": "Teclado",
-        "Estoque": 5,
-        "EstoqueMinimo": 10,
+        "Estoque": 40,
+        "EstoqueMinimo": 15,
         "Unidade": "Un",
         "Preco": 80.00
     },
     {
         "idProduto": 4,
         "Descricao": "Mouse",
-        "Estoque": 3,
-        "EstoqueMinimo": 10,
+        "Estoque": 7,
+        "EstoqueMinimo": 15,
         "Unidade": "Un",
         "Preco": 50.00
     }
@@ -77,18 +77,21 @@ const produtos=[
 const departamentos=[
     {
         "idDep": 10,
+        "idFunc": 11,
         "Descricao": "Sec. Educacao",
         "Responsavel": "Jose",
         "Cargo": "Administrador"
     },
     {
         "idDep": 30,
+        "idFunc": 31,
         "Descricao": "Sec. Trabalho",
         "Responsavel": "Luiz",
         "Cargo": "Gestor"
     },
     {
         "idDep": 40,
+        "idFunc": 41,
         "Descricao": "NAT",
         "Responsavel": "Maria",
         "Cargo": "Gerente"
