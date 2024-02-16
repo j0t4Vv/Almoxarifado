@@ -85,6 +85,14 @@ input, select{
     width: 80px;
 }
 
+.Quantidade{
+   width: 60px;
+   margin-right: 5px;
+}
+
+.Quantidade input{
+    width: 60px;
+}
 
 .BtnInserirItens{
     background-color:steelblue ;

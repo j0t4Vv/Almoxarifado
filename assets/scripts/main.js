@@ -279,51 +279,65 @@ function adcionarRegraCamposSomenteNumeros(){
 
 // })
 
-document.getElementById('BtnInserirItens').addEventListener('click',function(){
-    const tabelaItens = document.getElementById("tabelaItens")
+document.getElementById('BtnInserirItens').addEventListener('click', function(){
+    const tabelaItens = document.getElementById("tabelaItens");
 
-    const campoProduto = document.getElementById('CodigoProduto')
-    const campoDescricaoProduto = document.getElementById('DescricaoProduto')
-    const campoQuantidade = document.getElementById('Estoque')
-    const totalRequisicao = document.getElementById('total')
+    const campoProduto = document.getElementById('CodigoProduto');
+    const campoDescricaoProduto = document.getElementById('DescricaoProduto');
+    const campoQuantidade = document.getElementById('Quantidade');
+    const campoEstoque = document.getElementById('Estoque');
+    const totalRequisicao = document.getElementById('total');
 
-    const linha = document.createElement('tr')
+    const produtoPesquisado = produtos.find(p => p.idProduto === parseInt(campoProduto.value));
 
-    const tdCodigo = document.createElement('td')
-    const tdDrescricao= document.createElement('td')
-    const tdQuantidade = document.createElement('td')
-    const tdUnd = document.createElement('td')
-    const tdPreco = document.createElement('td')
-    const tdTotalLinha = document.createElement('td')
-    const tdBtnRemover = document.createElement('td')
+   
+    const quantidadeInformada = parseFloat(campoQuantidade.value);
+    if (quantidadeInformada <= 0) {
+        alert("A quantidade informada deve ser maior que zero.");
+        return;
+    }
+    if (!produtoPesquisado) {
+        alert("Produto não encontrado.");
+        return;
+    }
+    if (quantidadeInformada > produtoPesquisado.Estoque) {
+        alert("A quantidade informada é maior do que o estoque disponível.");
+        return;
+    }
 
+    const linha = document.createElement('tr');
+    const tdCodigo = document.createElement('td');
+    const tdDrescricao= document.createElement('td');
+    const tdQuantidade = document.createElement('td');
+    const tdUnd = document.createElement('td');
+    const tdPreco = document.createElement('td');
+    const tdTotalLinha = document.createElement('td');
+    const tdBtnRemover = document.createElement('td');
 
-    const produtoPesquisado = produtos.filter((p)=> p.idProduto==campoProduto.value)
-    console.log(produtoPesquisado)
+    tdCodigo.innerHTML =  campoProduto.value;
+    tdDrescricao.innerHTML =  campoDescricaoProduto.value;
+    tdQuantidade.innerHTML =  quantidadeInformada;
+    tdUnd.innerHTML =  produtoPesquisado.Unidade;
+    tdPreco.innerHTML =  produtoPesquisado.Preco;
+    tdTotalLinha.innerHTML =  parseFloat(campoQuantidade.value) * parseFloat(tdPreco.innerHTML);
+    totalRequisicao.value = parseFloat(totalRequisicao.value) + parseFloat(tdTotalLinha.innerHTML);
 
-    tdCodigo.innerHTML =  campoProduto.value
-    tdDrescricao.innerHTML =  campoDescricaoProduto.value
-    tdQuantidade.innerHTML =  campoQuantidade.value
-    tdUnd.innerHTML =  produtoPesquisado[0].Unidade
-    tdPreco.innerHTML =  produtoPesquisado[0].Preco
-    tdTotalLinha.innerHTML =  campoQuantidade.value*produtoPesquisado[0].Preco
-    
-    
-    linha.appendChild(tdCodigo)
-    linha.appendChild(tdDrescricao)
-    linha.appendChild(tdQuantidade)
-    linha.appendChild(tdUnd)
-    linha.appendChild(tdPreco)
-    linha.appendChild(tdTotalLinha)
-    tabelaItens.appendChild(linha)
-
-    totalRequisicao.value = parseFloat(totalRequisicao.value) + parseFloat(campoQuantidade.value*produtoPesquisado[0].Preco)
+    linha.appendChild(tdCodigo);
+    linha.appendChild(tdDrescricao);
+    linha.appendChild(tdQuantidade);
+    linha.appendChild(tdUnd);
+    linha.appendChild(tdPreco);
+    linha.appendChild(tdTotalLinha);
 
     tdBtnRemover.appendChild(criarBtnRemover(tabelaItens, linha));
     linha.appendChild(tdBtnRemover);
     tabelaItens.appendChild(linha);
 
-})
+   
+    produtoPesquisado.Estoque -= quantidadeInformada;
+    campoEstoque.value = produtoPesquisado.Estoque;
+});
+
 
 function criarBtnRemover(tabela, objLinha, numeroLinha){
     const btnRemoverItem = document.createElement('div');
